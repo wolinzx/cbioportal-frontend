@@ -17,37 +17,34 @@ interface IGenesListProps {
 }
 
 @observer
-export default class GenesList extends React.Component<IGenesListProps, {}> {
-    @observable filter: string = '';
-
+export default class GenesList extends React.Component<
+    IGenesListProps,
+    {}
+> {
+    @observable filter:string = '';
+    
     @autobind
-    @action
-    handleChangeInput(value: string) {
+    @action handleChangeInput(value: string) {
         this.filter = value;
-    }
+    };
 
     @computed get filteredGenes() {
         const { genes } = this.props.genePanel;
         if (this.filter) {
             const regex = new RegExp(this.filter, 'i');
             return genes.filter(
-                gene =>
-                    regex.test(gene.entrezGeneId.toString()) ||
-                    regex.test(gene.hugoGeneSymbol)
+                gene => regex.test(gene.entrezGeneId.toString()) || regex.test(gene.hugoGeneSymbol)
             );
         }
         return genes;
-    }
+    };
 
     genesDividedToColumns = (genes: GenePanelToGene[]) => {
         let result = [];
         let columnCount = this.columnCount;
         let remainingGenes = [...genes];
         while (columnCount > 0) {
-            const chunked = chunk(
-                remainingGenes,
-                Math.ceil(remainingGenes.length / columnCount)
-            );
+            const chunked = chunk(remainingGenes, Math.ceil(remainingGenes.length/columnCount));
             if (chunked.length === columnCount) {
                 result = result.concat(chunked);
                 break;
@@ -65,21 +62,16 @@ export default class GenesList extends React.Component<IGenesListProps, {}> {
         if (filtered.length === 0) {
             return [];
         }
-        const rows: JSX.Element[] = [];
+        const rows:JSX.Element[] = [];
         this.genesDividedToRows(filtered).forEach(row => {
-            const tdValues = row.map(gene => (
-                <td key={gene ? gene : Math.random()}>{gene}</td>
-            ));
+            const tdValues = row.map(gene => <td key={gene ? gene : Math.random()}>{gene}</td>);
             rows.push(<tr>{tdValues}</tr>);
         });
         return rows;
-    }
+    };
 
     getDownloadData = () => {
-        const downloadData = [
-            ['Genes'],
-            ...this.props.genePanel.genes.map(gene => [gene.hugoGeneSymbol]),
-        ];
+        const downloadData = [['Genes'], ...this.props.genePanel.genes.map(gene => [gene.hugoGeneSymbol])];
         return serializeData(downloadData);
     };
 
@@ -103,12 +95,12 @@ export default class GenesList extends React.Component<IGenesListProps, {}> {
 
     @computed get columnCount() {
         return this.props.columns || 1;
-    }
+    };
 
     geneCountPerColumn = (totalLength: number) => {
         return Math.ceil(totalLength / this.columnCount);
     };
-
+    
     @computed get renderTableHeaders() {
         const thValues = [<th>Genes</th>];
         return thValues.concat(Array(this.columnCount - 1).fill(<th></th>));
@@ -123,12 +115,7 @@ export default class GenesList extends React.Component<IGenesListProps, {}> {
                 <span>
                     Number of genes: {this.props.genePanel.genes.length}
                 </span>
-                <div
-                    className={classnames(
-                        'pull-right has-feedback input-group-sm',
-                        styles.searchInput
-                    )}
-                >
+                <div className={classnames('pull-right has-feedback input-group-sm', styles.searchInput)}>
                     <input
                         type="text"
                         value={this.filter}
@@ -143,10 +130,7 @@ export default class GenesList extends React.Component<IGenesListProps, {}> {
                     />
                 </div>
                 <SimpleCopyDownloadControls
-                    className={classnames(
-                        'pull-right',
-                        styles.copyDownloadControls
-                    )}
+                    className={classnames("pull-right", styles.copyDownloadControls)}
                     downloadData={this.getDownloadData}
                     downloadFilename={`gene_panel_${this.props.genePanel.genePanelId}.tsv`}
                     controlsStyle="BUTTON"

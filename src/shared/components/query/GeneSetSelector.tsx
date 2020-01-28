@@ -99,7 +99,9 @@ export default class GeneSetSelector extends QueryStoreComponent<{}, {}> {
                             name="exclamation-circle"
                         />
                         <GeneSymbolValidationError
-                            sampleCount={this.store.approxSampleCount}
+                            sampleCount={
+                                this.store.approxSampleCount
+                            }
                             queryProductLimit={
                                 AppConfig.serverConfig.query_product_limit
                             }

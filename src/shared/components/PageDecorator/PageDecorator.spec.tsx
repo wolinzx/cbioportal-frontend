@@ -5,9 +5,17 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 describe('PageDecorator', () => {
-    before(() => {});
 
-    after(() => {});
+    before(()=>{
 
-    it('what does it do?', () => {});
+    });
+
+    after(()=>{
+
+    });
+
+    it('what does it do?', ()=>{
+
+    });
+
 });

@@ -1,7 +1,4 @@
-export function inputBoxChangeTimeoutEvent(
-    callback: (value: string) => void,
-    timeout: number
-): (evt: any) => void {
+export function inputBoxChangeTimeoutEvent(callback: (value: string) => void, timeout: number): (evt: any) => void {
     let searchTimeout: number | null = null;
     return (evt: any) => {
         if (searchTimeout !== null) {
@@ -14,4 +11,4 @@ export function inputBoxChangeTimeoutEvent(
             callback(filterValue);
         }, timeout || 400);
     };
-}
+};

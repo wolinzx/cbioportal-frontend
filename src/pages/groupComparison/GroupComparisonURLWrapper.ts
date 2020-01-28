@@ -1,29 +1,27 @@
-import URLWrapper from '../../shared/lib/URLWrapper';
-import ExtendedRouterStore from '../../shared/lib/ExtendedRouterStore';
-import { computed } from 'mobx';
-import { getTabId } from './GroupComparisonUtils';
-import { GroupComparisonTab } from './GroupComparisonTabs';
-import autobind from 'autobind-decorator';
-import { OverlapStrategy } from './GroupComparisonStore';
+import URLWrapper from "../../shared/lib/URLWrapper";
+import ExtendedRouterStore from "../../shared/lib/ExtendedRouterStore";
+import {computed} from "mobx";
+import {getTabId} from "./GroupComparisonUtils";
+import { GroupComparisonTab } from "./GroupComparisonTabs"
+import autobind from "autobind-decorator";
+import {OverlapStrategy} from "./GroupComparisonStore";
 
 export type GroupComparisonURLQuery = {
     sessionId: string;
-    groupOrder?: string; // json stringified array of names
-    unselectedGroups?: string; // json stringified array of names
-    overlapStrategy?: OverlapStrategy;
-    patientEnrichments?: string;
+    groupOrder?:string; // json stringified array of names
+    unselectedGroups?:string; // json stringified array of names
+    overlapStrategy?:OverlapStrategy;
+    patientEnrichments?:string;
 };
 
-export default class GroupComparisonURLWrapper extends URLWrapper<
-    GroupComparisonURLQuery
-> {
-    constructor(routing: ExtendedRouterStore) {
+export default class GroupComparisonURLWrapper extends URLWrapper<GroupComparisonURLQuery> {
+    constructor(routing:ExtendedRouterStore) {
         super(routing, {
             sessionId: { isSessionProp: false },
             groupOrder: { isSessionProp: false },
             unselectedGroups: { isSessionProp: false },
             overlapStrategy: { isSessionProp: false },
-            patientEnrichments: { isSessionProp: false },
+            patientEnrichments: { isSessionProp: false }
         });
     }
 
@@ -32,7 +30,7 @@ export default class GroupComparisonURLWrapper extends URLWrapper<
     }
 
     @autobind
-    public setTabId(tabId: GroupComparisonTab, replace?: boolean) {
+    public setTabId(tabId:GroupComparisonTab, replace?:boolean) {
         this.updateURL({}, `comparison/${tabId}`, false, replace);
     }
 }

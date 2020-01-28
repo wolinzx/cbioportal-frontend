@@ -4,7 +4,13 @@ import { shallow, mount } from 'enzyme';
 import sinon from 'sinon';
 
 describe('', () => {
-    before(() => {});
 
-    after(() => {});
+    before(()=>{
+
+    });
+
+    after(()=>{
+
+    });
+
 });

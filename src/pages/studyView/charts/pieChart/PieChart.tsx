@@ -1,27 +1,18 @@
-import * as React from 'react';
-import { observer } from 'mobx-react';
-import {
-    Slice,
-    VictoryContainer,
-    VictoryLabel,
-    VictoryLegend,
-    VictoryPie,
-} from 'victory';
-import { action, computed, observable, toJS } from 'mobx';
-import _ from 'lodash';
-import {
-    getFrequencyStr,
-    toSvgDomNodeWithLegend,
-} from 'pages/studyView/StudyViewUtils';
-import CBIOPORTAL_VICTORY_THEME from 'shared/theme/cBioPoralTheme';
-import { AbstractChart } from 'pages/studyView/charts/ChartContainer';
+import * as React from "react";
+import {observer} from "mobx-react";
+import {Slice, VictoryContainer, VictoryLabel, VictoryLegend, VictoryPie} from 'victory';
+import {action, computed, observable, toJS} from "mobx";
+import _ from "lodash";
+import {getFrequencyStr, toSvgDomNodeWithLegend} from "pages/studyView/StudyViewUtils";
+import CBIOPORTAL_VICTORY_THEME from "shared/theme/cBioPoralTheme";
+import {AbstractChart} from "pages/studyView/charts/ChartContainer";
 import autobind from 'autobind-decorator';
-import { ClinicalDataCountSummary } from 'pages/studyView/StudyViewUtils';
-import ClinicalTable from 'pages/studyView/table/ClinicalTable';
-import { STUDY_VIEW_CONFIG } from '../../StudyViewConfig';
-import { DefaultTooltip, getTextWidth } from 'cbioportal-frontend-commons';
-import { DEFAULT_NA_COLOR } from 'shared/lib/Colors';
-import ifNotDefined from '../../../../shared/lib/ifNotDefined';
+import {ClinicalDataCountSummary} from "pages/studyView/StudyViewUtils";
+import ClinicalTable from "pages/studyView/table/ClinicalTable";
+import {STUDY_VIEW_CONFIG} from "../../StudyViewConfig";
+import {DefaultTooltip, getTextWidth} from "cbioportal-frontend-commons";
+import {DEFAULT_NA_COLOR} from "shared/lib/Colors";
+import ifNotDefined from "../../../../shared/lib/ifNotDefined";
 
 export interface IPieChartProps {
     width: number;
@@ -36,8 +27,8 @@ export interface IPieChartProps {
 }
 
 @observer
-export default class PieChart extends React.Component<IPieChartProps, {}>
-    implements AbstractChart {
+export default class PieChart extends React.Component<IPieChartProps, {}> implements AbstractChart {
+
     private svg: SVGElement;
 
     constructor(props: IPieChartProps) {
@@ -46,17 +37,11 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
 
     @computed
     get filters() {
-        const mappedValueSet = _.reduce(
-            this.props.data,
-            (acc, datum) => {
-                acc[datum.value.toLowerCase()] = datum.value;
-                return acc;
-            },
-            {} as { [id: string]: string }
-        );
-        return this.props.filters.map(
-            filter => mappedValueSet[filter.toLowerCase()] || filter
-        );
+        const mappedValueSet = _.reduce(this.props.data, (acc, datum) => {
+            acc[datum.value.toLowerCase()] = datum.value;
+            return acc;
+        }, {} as { [id: string]: string });
+        return this.props.filters.map(filter => mappedValueSet[filter.toLowerCase()] || filter);
     }
 
     @autobind
@@ -72,16 +57,13 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
 
     private get userEvents() {
         const self = this;
-        return [
-            {
-                target: 'data',
-                eventHandlers: this.pieSliceOnClickEventHandlers,
-            },
-            {
-                target: 'labels',
-                eventHandlers: this.pieSliceOnClickEventHandlers,
-            },
-        ];
+        return [{
+            target: "data",
+            eventHandlers: this.pieSliceOnClickEventHandlers
+        }, {
+            target: "labels",
+            eventHandlers: this.pieSliceOnClickEventHandlers
+        }];
     }
 
     private get pieSliceOnClickEventHandlers() {
@@ -89,14 +71,14 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
             onClick: () => {
                 return [
                     {
-                        target: 'data',
+                        target: "data",
                         mutation: (props: any) => {
                             this.onUserSelection(props.datum.value);
-                        },
-                    },
+                        }
+                    }
                 ];
-            },
-        };
+            }
+        }
     }
 
     @observable isTooltipHovered: boolean = false;
@@ -109,31 +91,26 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
     }
 
     public downloadData() {
-        return this.props.data
-            .map(obj => obj.value + '\t' + obj.count)
-            .join('\n');
+        return this.props.data.map(obj => obj.value + '\t' + obj.count).join('\n');
     }
 
     public toSVGDOMNode(): Element {
         return toSvgDomNodeWithLegend(this.svg, {
-            legendGroupSelector: '.studyViewPieChartLegend',
-            chartGroupSelector: '.studyViewPieChartGroup',
-            centerLegend: true,
+            legendGroupSelector: ".studyViewPieChartLegend",
+            chartGroupSelector: ".studyViewPieChartGroup",
+            centerLegend: true
         });
     }
 
     @computed
     get totalCount() {
-        return _.sumBy(this.props.data, obj => obj.count);
+        return _.sumBy(this.props.data, obj => obj.count)
     }
 
     @computed
     get fill() {
         return (d: ClinicalDataCountSummary) => {
-            if (
-                !_.isEmpty(this.filters) &&
-                !_.includes(this.filters, d.value)
-            ) {
+            if (!_.isEmpty(this.filters) && !_.includes(this.filters, d.value)) {
                 return DEFAULT_NA_COLOR;
             }
             return d.color;
@@ -144,7 +121,7 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
     get stroke() {
         return (d: ClinicalDataCountSummary) => {
             if (!_.isEmpty(this.filters) && _.includes(this.filters, d.value)) {
-                return '#cccccc';
+                return "#cccccc";
             }
             return null;
         };
@@ -163,10 +140,7 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
     @computed
     get fillOpacity() {
         return (d: ClinicalDataCountSummary) => {
-            if (
-                !_.isEmpty(this.filters) &&
-                !_.includes(this.filters, d.value)
-            ) {
+            if (!_.isEmpty(this.filters) && !_.includes(this.filters, d.value)) {
                 return '0.5';
             }
             return 1;
@@ -185,33 +159,24 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
 
     @autobind
     private label(d: ClinicalDataCountSummary) {
-        return d.count / this.totalCount > 0.5
-            ? d.count.toLocaleString()
-            : this.maxLength(
-                  d.count / this.totalCount,
-                  this.pieSliceRadius / 3
-              ) <
-              getTextWidth(
-                  d.count.toLocaleString(),
-                  CBIOPORTAL_VICTORY_THEME.axis.style.tickLabels.fontFamily,
-                  `${CBIOPORTAL_VICTORY_THEME.axis.style.tickLabels.fontSize}px`
-              )
-            ? ''
-            : d.count.toLocaleString();
+        return d.count / this.totalCount > 0.5 ? d.count.toLocaleString() : (
+            this.maxLength(d.count / this.totalCount, this.pieSliceRadius / 3) <
+            getTextWidth(
+                d.count.toLocaleString(),
+                CBIOPORTAL_VICTORY_THEME.axis.style.tickLabels.fontFamily,
+                `${CBIOPORTAL_VICTORY_THEME.axis.style.tickLabels.fontSize}px`
+            ) ? '' : d.count.toLocaleString());
     }
 
     // We don't want to show a bigger pie chart when the height is way smaller than width
     @computed
     get chartSize() {
-        return (this.props.width + this.props.height) / 2;
+        return (this.props.width + this.props.height ) / 2;
     }
 
     @computed
     get pieSliceRadius(): number {
-        const chartWidth =
-            this.props.width > this.props.height
-                ? this.props.height
-                : this.props.width;
+        const chartWidth = this.props.width > this.props.height ? this.props.height : this.props.width;
         return chartWidth / 2 - STUDY_VIEW_CONFIG.thresholds.piePadding;
     }
 
@@ -221,34 +186,29 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
             <VictoryPie
                 standalone={false}
                 theme={CBIOPORTAL_VICTORY_THEME}
-                containerComponent={<VictoryContainer responsive={false} />}
-                groupComponent={
-                    <g
-                        className="studyViewPieChartGroup"
-                        transform="translate(0, -12)"
-                    />
-                }
+                containerComponent={<VictoryContainer responsive={false}/>}
+                groupComponent={<g className="studyViewPieChartGroup" transform="translate(0, -12)"/>}
                 width={this.props.width}
                 height={this.chartSize}
                 labelRadius={this.pieSliceRadius / 3}
                 radius={this.pieSliceRadius}
                 labels={this.label}
                 data={this.props.data}
-                dataComponent={<CustomSlice />}
-                labelComponent={<VictoryLabel />}
+                dataComponent={<CustomSlice/>}
+                labelComponent={<VictoryLabel/>}
                 events={this.userEvents}
                 style={{
                     data: {
-                        fill: ifNotDefined(this.fill, '#cccccc'),
-                        stroke: ifNotDefined(this.stroke, '0x000000'),
+                        fill: ifNotDefined(this.fill, "#cccccc"),
+                        stroke: ifNotDefined(this.stroke, "0x000000"),
                         strokeWidth: ifNotDefined(this.strokeWidth, 0),
                         fillOpacity: ifNotDefined(this.fillOpacity, 1),
-                        cursor: 'pointer',
+                        cursor: 'pointer'
                     },
                     labels: {
-                        fill: 'white',
-                        cursor: 'pointer',
-                    },
+                        fill: "white",
+                        cursor: 'pointer'
+                    }
                 }}
                 x={this.x}
                 y={this.y}
@@ -258,20 +218,17 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
 
     @computed
     get victoryLegend() {
-        const legendData = this.props.data.map(data => ({
-            name: `${data.value}: ${data.count} (${getFrequencyStr(
-                (100 * data.count) / this.totalCount
-            )})`,
-        }));
+        const legendData = this.props.data.map(data =>
+            ({name: `${data.value}: ${data.count} (${getFrequencyStr(100 * data.count / this.totalCount)})`}));
         const colorScale = this.props.data.map(data => data.color);
 
         // override the legend style without mutating the actual theme object
         const theme = _.cloneDeep(CBIOPORTAL_VICTORY_THEME);
         theme.legend.style.data = {
-            type: 'square',
+            type: "square",
             size: 5,
             strokeWidth: 0,
-            stroke: 'black',
+            stroke: "black"
         };
 
         return (
@@ -279,27 +236,26 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
                 standalone={false}
                 theme={theme}
                 colorScale={colorScale}
-                x={0}
-                y={this.props.height + 1}
+                x={0} y={this.props.height + 1}
                 rowGutter={-10}
-                title={this.props.label || 'Legend'}
+                title={this.props.label || "Legend"}
                 centerTitle={true}
-                style={{ title: { fontWeight: 'bold' } }}
+                style={{title: {fontWeight: "bold"}}}
                 data={legendData}
-                groupComponent={<g className="studyViewPieChartLegend" />}
+                groupComponent={<g className="studyViewPieChartLegend"/>}
             />
         );
     }
 
     private maxLength(ratioOfPie: number, radius: number) {
-        return Math.abs(Math.tan((Math.PI * ratioOfPie) / 2)) * radius * 2;
+        return Math.abs(Math.tan(Math.PI * ratioOfPie / 2)) * radius * 2;
     }
 
     public render() {
         return (
             <DefaultTooltip
                 placement={this.props.placement}
-                overlay={
+                overlay={(
                     <ClinicalTable
                         width={300}
                         height={150}
@@ -311,15 +267,14 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
                         filters={this.filters}
                         highlightedRow={this.highlightedRow}
                         onUserSelection={this.props.onUserSelection}
-                    />
-                }
+                    />)}
                 destroyTooltipOnHide={true}
-                trigger={['hover']}
+                trigger={["hover"]}
             >
                 <svg
                     width={this.props.width}
                     height={this.props.height}
-                    ref={(ref: any) => (this.svg = ref)}
+                    ref={(ref: any) => this.svg = ref}
                 >
                     {this.victoryPie}
                     {this.victoryLegend}
@@ -327,6 +282,7 @@ export default class PieChart extends React.Component<IPieChartProps, {}>
             </DefaultTooltip>
         );
     }
+
 }
 
 class CustomSlice extends React.Component<{}, {}> {

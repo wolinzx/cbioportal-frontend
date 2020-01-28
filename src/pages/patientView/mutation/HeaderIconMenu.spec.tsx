@@ -1,11 +1,14 @@
 import React from 'react';
-import { ReactWrapper, mount, shallow } from 'enzyme';
+import {ReactWrapper, mount, shallow} from "enzyme";
 import { assert } from 'chai';
 import HeaderIconMenu from './HeaderIconMenu';
 
-describe('HeaderIconMenu', () => {
+describe("HeaderIconMenu", ()=>{
+
     const headerName = 'MyName';
-    const wrapper = mount(<HeaderIconMenu name={headerName} />);
+    const wrapper = mount(<HeaderIconMenu 
+        name={headerName}
+    />); 
 
     it('shows the name passed in as prop', () => {
         assert.equal(wrapper.find('span').text(), headerName);
@@ -16,4 +19,5 @@ describe('HeaderIconMenu', () => {
         icon.simulate('click');
         assert.isTrue(wrapper.find('.rc-tooltip').exists());
     });
+
 });
