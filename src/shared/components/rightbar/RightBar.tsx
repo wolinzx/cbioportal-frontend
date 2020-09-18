@@ -157,6 +157,30 @@ export default class RightBar extends React.Component<
         }
     }
 
+    private getInstallationMap() {
+        const installations_url =
+            'https://gentle-badlands-39293.herokuapp.com/';
+        return AppConfig.serverConfig.app_name === 'public-portal' ? (
+            <div className="rightBarSection">
+                <h3>cBioPortal Installations</h3>
+                <a href="/installations" style={{ display: 'block' }}>
+                    <iframe
+                        frameBorder="0"
+                        height={200}
+                        width={300}
+                        scrolling="no"
+                        src={`${installations_url}?small=1`}
+                        style={{ pointerEvents: 'none' }}
+                    />
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSflQdN956q7Xh5caO8z8jIaF6uMLBkKrSxFvPi8OhNBWB247w/viewform">
+                    Have you installed and used cBioPortal? Fill out the survey
+                    here to have your lab featured on the map!
+                </a>
+            </div>
+        ) : null;
+    }
+
     public getExampleSection() {
         if (AppConfig.serverConfig.skin_right_nav_show_examples) {
             if (
@@ -289,6 +313,7 @@ export default class RightBar extends React.Component<
         return (
             <div>
                 {this.getWhatsNew()}
+                {this.getInstallationMap()}
                 {this.getDataSetsSection()}
                 {this.getExampleSection()}
                 {this.getTestimonialsSection()}
