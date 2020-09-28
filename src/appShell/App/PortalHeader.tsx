@@ -93,7 +93,7 @@ export default class PortalHeader extends React.Component<
 
             {
                 id: 'installation-map',
-                text: 'cBioportal Installations',
+                text: 'cBioPortal Installations',
                 address: '/installations',
                 internal: false,
                 hide: () => AppConfig.serverConfig.app_name !== 'public-portal',
