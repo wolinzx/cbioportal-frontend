@@ -175,7 +175,7 @@ export default class RightBar extends React.Component<
                 </a>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSflQdN956q7Xh5caO8z8jIaF6uMLBkKrSxFvPi8OhNBWB247w/viewform">
                     Have you installed and used cBioPortal? Fill out the survey
-                    here to have your lab featured on the map!
+                    here to have your installation featured on the map!
                 </a>
             </div>
         ) : null;
