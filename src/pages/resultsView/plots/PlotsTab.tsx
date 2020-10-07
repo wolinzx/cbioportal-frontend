@@ -4864,8 +4864,9 @@ export default class PlotsTab extends React.Component<IPlotsTabProps, {}> {
                                 <div style={{ marginTop: 5 }}>
                                     <div>
                                         ** Labeling of threshold values (e.g.
-                                        >8.00) excludes threshold values from
-                                        correlation coefficient calculation.
+                                        {'>'}8.00) excludes threshold values
+                                        from correlation coefficient
+                                        calculation.
                                     </div>
                                 </div>
                             )}
@@ -4874,8 +4875,8 @@ export default class PlotsTab extends React.Component<IPlotsTabProps, {}> {
                                 <div style={{ marginTop: 5 }}>
                                     <div>
                                         ** Labeling of threshold values (e.g.
-                                        >8.00) excludes threshold values from
-                                        box plot calculation.
+                                        {'>'}8.00) excludes threshold values
+                                        from box plot calculation.
                                     </div>
                                 </div>
                             )}
