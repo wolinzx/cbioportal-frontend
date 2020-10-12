@@ -1286,11 +1286,7 @@ export class StudyViewPageStore {
                 break;
         }
 
-        window.open(
-            'http://192.168.2.146:9630/#/cohortStudy/index?url=' +
-                getComparisonUrl({ sessionId }),
-            '_blank'
-        );
+        window.open(getComparisonUrl({ sessionId }), '_self');
     }
     // < / comparison groups code>
 
