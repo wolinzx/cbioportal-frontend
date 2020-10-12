@@ -50,7 +50,7 @@ export class ClinicalDataTab extends React.Component<
             render: (data: { [id: string]: string }) => {
                 if (isUrl(data[key])) {
                     return (
-                        <a href={data[key]} target="_blank">
+                        <a href={data[key]} target="_self">
                             {data[key]}
                         </a>
                     );
@@ -88,7 +88,7 @@ export class ClinicalDataTab extends React.Component<
                                     data.studyId,
                                     data.patientId
                                 )}
-                                target="_blank"
+                                target="_self"
                             >
                                 {data.patientId}
                             </a>
@@ -104,7 +104,7 @@ export class ClinicalDataTab extends React.Component<
                                     data.studyId,
                                     data.sampleId
                                 )}
-                                target="_blank"
+                                target="_self"
                             >
                                 {data.sampleId}
                             </a>
