@@ -278,7 +278,7 @@ export class ChartContainer extends React.Component<IChartContainerProps, {}> {
                 case ChartTypeEnum.PIE_CHART:
                 case ChartTypeEnum.TABLE:
                     const openComparison = () =>
-                        this.props.store.openComparisonPage(
+                        this.props.store.openComparisonPageWithoutLoading(
                             this.props.chartMeta,
                             {
                                 clinicalAttributeValues: this.props.promise
@@ -335,7 +335,7 @@ export class ChartContainer extends React.Component<IChartContainerProps, {}> {
                 case ChartTypeEnum.MUTATED_GENES_TABLE:
                 case ChartTypeEnum.SAMPLE_TREATMENTS_TABLE:
                 case ChartTypeEnum.PATIENT_TREATMENTS_TABLE:
-                    this.props.store.openComparisonPage(
+                    this.props.store.openComparisonPageWithoutLoading(
                         this.props.chartMeta,
                         params || {}
                     );

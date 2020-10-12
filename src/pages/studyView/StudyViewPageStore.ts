@@ -136,6 +136,7 @@ import {
     getMDAndersonHeatmapStudyMetaUrl,
     getStudyDownloadListUrl,
     redirectToComparisonPage,
+    getComparisonUrl,
 } from '../../shared/api/urls';
 import onMobxPromise from '../../shared/lib/onMobxPromise';
 import request from 'superagent';
@@ -1229,6 +1230,67 @@ export class StudyViewPageStore {
             // redirect window to correct URL
             redirectToComparisonPage(comparisonWindow!, { sessionId });
         }
+    }
+
+    @autobind
+    public async openComparisonPageWithoutLoading(
+        chartMeta: ChartMeta,
+        params: {
+            // for numerical attribute
+            categorizationType?: NumericalGroupComparisonType;
+            // for string attribute
+            clinicalAttributeValues?: ClinicalDataCountSummary[];
+            // for mutated genes table
+            hugoGeneSymbols?: string[];
+            // for treatments tables
+            treatmentUniqueKeys?: string[];
+        }
+    ) {
+        // save comparison session, and get id
+        let sessionId: string;
+        const statusCallback = (phase: LoadingPhase) => {};
+
+        const chartType = this.chartsType.get(chartMeta.uniqueKey);
+        switch (chartType) {
+            case ChartTypeEnum.PIE_CHART:
+            case ChartTypeEnum.TABLE:
+                sessionId = await this.createCategoricalAttributeComparisonSession(
+                    chartMeta,
+                    params.clinicalAttributeValues!,
+                    statusCallback
+                );
+                break;
+            case ChartTypeEnum.MUTATED_GENES_TABLE:
+                sessionId = await this.createMutatedGeneComparisonSession(
+                    chartMeta,
+                    params.hugoGeneSymbols!,
+                    statusCallback
+                );
+                break;
+            case ChartTypeEnum.SAMPLE_TREATMENTS_TABLE:
+            case ChartTypeEnum.PATIENT_TREATMENTS_TABLE:
+                sessionId = await this.createTreatmentsComparisonSession(
+                    chartMeta,
+                    chartType,
+                    params.treatmentUniqueKeys!,
+                    statusCallback
+                );
+                break;
+            default:
+                sessionId = await this.createNumberAttributeComparisonSession(
+                    chartMeta,
+                    params.categorizationType ||
+                        NumericalGroupComparisonType.QUARTILES,
+                    statusCallback
+                );
+                break;
+        }
+
+        window.open(
+            'http://192.168.2.146:9630/#/cohortStudy/index?url=' +
+                getComparisonUrl({ sessionId }),
+            '_blank'
+        );
     }
     // < / comparison groups code>
 
