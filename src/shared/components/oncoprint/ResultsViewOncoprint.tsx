@@ -972,7 +972,8 @@ export default class ResultsViewOncoprint extends React.Component<
                                 }
 
                                 const oncoprinterWindow = window.open(
-                                    buildCBioPortalPageUrl('/oncoprinter')
+                                    buildCBioPortalPageUrl('/oncoprinter'),
+                                    '_self'
                                 ) as any;
                                 oncoprinterWindow.clientPostedData = {
                                     genetic: geneticInput,

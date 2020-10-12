@@ -70,7 +70,8 @@ export default class ActionButtons extends React.Component<
                     getPatientViewUrl(
                         firstPatient.studyId,
                         firstPatient.patientId
-                    )
+                    ),
+                    '_self'
                 ) as any;
                 patientViewWindow.clientPostedData = {
                     navCaseIds: navCaseIds,
@@ -82,7 +83,8 @@ export default class ActionButtons extends React.Component<
                         firstPatient.studyId,
                         firstPatient.patientId,
                         navCaseIds
-                    )
+                    ),
+                    '_self'
                 );
             }
         }

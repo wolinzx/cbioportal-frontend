@@ -192,7 +192,8 @@ export default class CancerSummaryContainer extends React.Component<
         );
 
         const studyWindow = window.open(
-            buildCBioPortalPageUrl('/results')
+            buildCBioPortalPageUrl('/results'),
+            '_self'
         ) as any;
 
         studyWindow.clientPostedData = params;
