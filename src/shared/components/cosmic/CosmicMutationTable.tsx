@@ -36,7 +36,7 @@ export default class CosmicMutationTable extends React.Component<
                     <span>
                         <a
                             href={`http://cancer.sanger.ac.uk/cosmic/mutation/overview?id=${d.cosmicMutationId}`}
-                            target="_blank"
+                            target="_self"
                         >
                             {d.cosmicMutationId}
                         </a>

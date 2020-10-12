@@ -42,7 +42,7 @@ export default class PatientHeader extends React.Component<
             // add link to darwin
             let darwinImgSrc = require('./images/darwin_logo.png');
             return (
-                <a target="_blank" href={darwinUrl}>
+                <a target="_self" href={darwinUrl}>
                     <img
                         style={{
                             paddingLeft: '5px',

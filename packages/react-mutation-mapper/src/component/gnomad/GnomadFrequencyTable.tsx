@@ -94,19 +94,19 @@ export default class GnomadFrequencyTable extends React.Component<
 > {
     public render() {
         const myvariantLink = (
-            <a href="https://myvariant.info/" target="_blank">
+            <a href="https://myvariant.info/" target="_self">
                 myvariant.info
             </a>
         );
 
         const genomeNexusLink = (
-            <a href="https://www.genomenexus.org/" target="_blank">
+            <a href="https://www.genomenexus.org/" target="_self">
                 genomenexus.org
             </a>
         );
 
         const gnomadLink = (
-            <a href={this.props.gnomadUrl} target="_blank">
+            <a href={this.props.gnomadUrl} target="_self">
                 gnomAD
             </a>
         );

@@ -41,7 +41,7 @@ export default class ClinicalInformationSamplesTable extends React.Component<
             render: (data: ISampleRow) => {
                 if (isUrl(data[col.id] as any)) {
                     return (
-                        <a href={data[col.id] as any} target="_blank">
+                        <a href={data[col.id] as any} target="_self">
                             {data[col.id]}
                         </a>
                     );

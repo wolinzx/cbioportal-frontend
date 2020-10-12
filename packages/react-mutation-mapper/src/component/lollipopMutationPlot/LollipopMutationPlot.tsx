@@ -441,7 +441,7 @@ export default class LollipopMutationPlot extends React.Component<
             <div style={{ maxWidth: 200 }}>
                 <a
                     href={`http://www.uniprot.org/uniprot/${this.props.store.uniprotId.result}`}
-                    target="_blank"
+                    target="_self"
                 >
                     {this.props.store.uniprotId.result}
                 </a>

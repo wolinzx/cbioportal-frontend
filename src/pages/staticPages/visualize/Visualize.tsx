@@ -62,14 +62,14 @@ export default class Visualize extends React.Component<{}, {}> {
                 <h2>3. Commercial support</h2>
                 <ul>
                     <li>
-                        <a href="http://thehyve.nl" target="_blank">
+                        <a href="http://thehyve.nl" target="_self">
                             The Hyve
                         </a>{' '}
                         is an open source software company that provides
                         commercial support for cBioPortal. They can help with
                         deployment, data loading, development, consulting and
                         training. Please{' '}
-                        <a href="http://thehyve.nl/contact/" target="_blank">
+                        <a href="http://thehyve.nl/contact/" target="_self">
                             contact The Hyve
                         </a>{' '}
                         for details.

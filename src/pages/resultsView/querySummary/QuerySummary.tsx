@@ -114,7 +114,7 @@ export default class QuerySummary extends React.Component<
                                     .map(study => study.studyId)
                                     .join(','),
                             })}
-                            target="_blank"
+                            target="_self"
                         >
                             {this.props.store.queriedStudies.result[0].name}
                         </a>
@@ -163,7 +163,7 @@ export default class QuerySummary extends React.Component<
                                     .map(study => study.studyId)
                                     .join(','),
                             })}
-                            target="_blank"
+                            target="_self"
                         >
                             Combined Study (
                             {_.sumBy(

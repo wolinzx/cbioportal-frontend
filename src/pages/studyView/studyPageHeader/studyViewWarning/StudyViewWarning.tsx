@@ -130,7 +130,7 @@ export default class StudyViewWarning extends React.Component<{}, {}> {
                                 public cBioPortal (
                                 <a
                                     href="https://www.cbioportal.org/"
-                                    target="_blank"
+                                    target="_self"
                                 >
                                     cbioportal.org
                                 </a>
@@ -149,7 +149,7 @@ export default class StudyViewWarning extends React.Component<{}, {}> {
                                 I have read the{' '}
                                 <a
                                     href="https://cmo.mskcc.org/cmo/initiatives/msk-impact/"
-                                    target="_blank"
+                                    target="_self"
                                 >
                                     MSK-IMPACT Data publication guidelines
                                 </a>

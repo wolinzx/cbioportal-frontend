@@ -305,10 +305,7 @@ class FunctionalImpactColumnTooltip extends React.Component<
     public static mutationAssessorText() {
         return (
             <div style={{ width: 450, height: 100 }}>
-                <a
-                    href={MutationAssessor.MUTATION_ASSESSOR_URL}
-                    target="_blank"
-                >
+                <a href={MutationAssessor.MUTATION_ASSESSOR_URL} target="_self">
                     Mutation Assessor
                 </a>{' '}
                 predicts the functional impact of amino-acid substitutions in
@@ -324,7 +321,7 @@ class FunctionalImpactColumnTooltip extends React.Component<
     public static siftText() {
         return (
             <div style={{ width: 450, height: 100 }}>
-                <a href={Sift.SIFT_URL} target="_blank">
+                <a href={Sift.SIFT_URL} target="_self">
                     SIFT
                 </a>{' '}
                 predicts whether an amino acid substitution affects protein
@@ -339,7 +336,7 @@ class FunctionalImpactColumnTooltip extends React.Component<
     public static polyPhen2Text() {
         return (
             <div style={{ width: 450, height: 100 }}>
-                <a href={PolyPhen2.POLYPHEN2_URL} target="_blank">
+                <a href={PolyPhen2.POLYPHEN2_URL} target="_self">
                     PolyPhen-2
                 </a>{' '}
                 (Polymorphism Phenotyping v2) is a tool which predicts possible

@@ -768,7 +768,7 @@ export default class SurvivalChart
                                         this.tooltipModel.datum.studyId,
                                         this.tooltipModel.datum.patientId
                                     )}
-                                    target="_blank"
+                                    target="_self"
                                 >
                                     {this.tooltipModel.datum.patientId}
                                 </a>

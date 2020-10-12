@@ -79,7 +79,7 @@ export default class TrialMatchTable extends React.Component<ITrialMatchProps> {
                     <If condition={trial.protocolNo.length > 0}>
                         <div>
                             <a
-                                target="_blank"
+                                target="_self"
                                 href={
                                     'https://www.mskcc.org/cancer-care/clinical-trials/' +
                                     trial.protocolNo
@@ -92,7 +92,7 @@ export default class TrialMatchTable extends React.Component<ITrialMatchProps> {
                     <If condition={trial.nctId.length > 0}>
                         <div>
                             <a
-                                target="_blank"
+                                target="_self"
                                 href={
                                     'https://clinicaltrials.gov/ct2/show/' +
                                     trial.nctId
@@ -118,7 +118,7 @@ export default class TrialMatchTable extends React.Component<ITrialMatchProps> {
                             >
                                 <Then>
                                     <a
-                                        target="_blank"
+                                        target="_self"
                                         href={trial.principalInvestigator.url}
                                     >
                                         {trial.principalInvestigator.full_name}
@@ -276,7 +276,7 @@ export default class TrialMatchTable extends React.Component<ITrialMatchProps> {
             render: (trial: IDetailedTrialMatch) => (
                 <div className={styles.statusContainer}>
                     <a
-                        target="_blank"
+                        target="_self"
                         href={
                             'https://www.mskcc.org/cancer-care/clinical-trials/' +
                             trial.protocolNo
@@ -655,11 +655,11 @@ export default class TrialMatchTable extends React.Component<ITrialMatchProps> {
                 />
                 <div className={styles.powered}>
                     Powered by{' '}
-                    <a href="https://oncokb.org/" target="_blank">
+                    <a href="https://oncokb.org/" target="_self">
                         OncoKB
                     </a>{' '}
                     &{' '}
-                    <a href="https://matchminer.org/" target="_blank">
+                    <a href="https://matchminer.org/" target="_self">
                         MatchMiner
                     </a>
                 </div>

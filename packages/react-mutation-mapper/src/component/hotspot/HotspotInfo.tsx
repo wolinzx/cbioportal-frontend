@@ -65,7 +65,7 @@ export function publication(isHotspot: boolean, is3dHotspot: boolean) {
     const clusteredHotspot = is3dHotspot ? 'a 3D clustered hotspot' : '';
 
     const recurrentPublication = isHotspot ? (
-        <a href={getNCBIlink(`/pubmed/26619011`)} target="_blank">
+        <a href={getNCBIlink(`/pubmed/26619011`)} target="_self">
             Chang et al., Nat Biotechnol, 2016
         </a>
     ) : (
@@ -75,7 +75,7 @@ export function publication(isHotspot: boolean, is3dHotspot: boolean) {
     const clusteredPublication = is3dHotspot ? (
         <a
             href="http://genomemedicine.biomedcentral.com/articles/10.1186/s13073-016-0393-x"
-            target="_blank"
+            target="_self"
         >
             Gao et al., Genome Medicine, 2017
         </a>
@@ -95,7 +95,7 @@ export function publication(isHotspot: boolean, is3dHotspot: boolean) {
 
 export function link(isHotspot: boolean, is3dHotspot: boolean) {
     const recurrentLink = isHotspot ? (
-        <a href="https://www.cancerhotspots.org/" target="_blank">
+        <a href="https://www.cancerhotspots.org/" target="_self">
             https://cancerhotspots.org/
         </a>
     ) : (
@@ -105,7 +105,7 @@ export function link(isHotspot: boolean, is3dHotspot: boolean) {
     const maybeAnd = isHotspot && is3dHotspot ? 'and' : '';
 
     const clusteredLink = is3dHotspot ? (
-        <a href="https://www.3dhotspots.org/" target="_blank">
+        <a href="https://www.3dhotspots.org/" target="_self">
             https://3dhotspots.org/
         </a>
     ) : (

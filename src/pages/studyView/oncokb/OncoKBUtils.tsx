@@ -32,7 +32,7 @@ export function getOncoKBReferenceInfo(
                     <Then>
                         <a
                             href={`${ONCOKB_URL}/gene/${hugoGeneSymbol}`}
-                            target="_blank"
+                            target="_self"
                         >
                             {hugoGeneSymbol}
                         </a>
@@ -55,7 +55,7 @@ export function getOncoKBReferenceInfo(
 
 export function getOncoKBCancerGeneListLinkout() {
     return (
-        <a href={`${ONCOKB_URL}/cancerGenes`} target="_blank">
+        <a href={`${ONCOKB_URL}/cancerGenes`} target="_self">
             OncoKB Cancer Gene List
         </a>
     );

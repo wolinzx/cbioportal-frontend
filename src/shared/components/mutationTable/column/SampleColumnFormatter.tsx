@@ -44,7 +44,7 @@ export default class SampleColumnFormatter {
                 content = (
                     <a
                         href={getSampleViewUrl(studyId, sampleId)}
-                        target="_blank"
+                        target="_self"
                     >
                         {content}
                     </a>

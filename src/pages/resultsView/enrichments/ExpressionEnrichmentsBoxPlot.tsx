@@ -273,7 +273,7 @@ export default class ExpressionEnrichmentsBoxPlot extends React.Component<
                         <div>
                             <a
                                 href={getSampleViewUrl(d.studyId, d.sampleId)}
-                                target="_blank"
+                                target="_self"
                             >
                                 <b>{d.sampleId}</b>
                             </a>
@@ -289,7 +289,7 @@ export default class ExpressionEnrichmentsBoxPlot extends React.Component<
                         <div>
                             <a
                                 href={getSampleViewUrl(d.studyId, d.sampleId)}
-                                target="_blank"
+                                target="_self"
                             >
                                 <b>{d.sampleId}</b>
                             </a>

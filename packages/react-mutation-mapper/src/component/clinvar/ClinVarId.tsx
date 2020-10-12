@@ -41,7 +41,7 @@ export default class ClinVarId extends React.Component<ClinVarIdProps, {}> {
                         <span>Click to see variant on ClinVar website.</span>
                     }
                 >
-                    <a href={clinVarLink} target="_blank">
+                    <a href={clinVarLink} target="_self">
                         {clinVarId}
                     </a>
                 </DefaultTooltip>

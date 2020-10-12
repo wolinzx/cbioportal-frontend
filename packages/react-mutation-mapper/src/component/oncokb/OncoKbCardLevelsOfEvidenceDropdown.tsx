@@ -24,7 +24,7 @@ const publicInstanceDisclaimerOverLay = (
             This instance of cBioPortal does not currently have a license for
             full OncoKB content and is therefore missing therapeutic
             implications. To obtain a license, please follow{' '}
-            <a href={ONCOKB_DATA_ACCESS_PAGE_LINK} target={'_blank'}>
+            <a href={ONCOKB_DATA_ACCESS_PAGE_LINK} target={'_self'}>
                 these instructions
             </a>
             .

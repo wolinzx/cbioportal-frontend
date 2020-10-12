@@ -139,7 +139,7 @@ export default class RightBar extends React.Component<
                                         Sign up for low-volume email news alerts
                                     </p>
                                     <a
-                                        target="_blank"
+                                        target="_self"
                                         className="btn btn-default btn-sm"
                                         href="http://groups.google.com/group/cbioportal-news/boxsubscribe"
                                         style={{ width: '100%' }}

@@ -107,7 +107,7 @@ export default class CaseSetSelector extends QueryStoreComponent<
                                 href={getStudySummaryUrl(
                                     this.store.selectableSelectedStudyIds
                                 )}
-                                target="_blank"
+                                target="_self"
                             >
                                 To build your own case set,
                                 <br />

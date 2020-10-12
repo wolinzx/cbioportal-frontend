@@ -266,7 +266,7 @@ export default class CaseAlterationTable extends React.Component<
                     <span style={{ whiteSpace: 'nowrap' }}>
                         <a
                             href={getSampleViewUrl(data.studyId, data.sampleId)}
-                            target="_blank"
+                            target="_self"
                         >
                             {data.sampleId}
                         </a>
@@ -287,7 +287,7 @@ export default class CaseAlterationTable extends React.Component<
                                 data.studyId,
                                 data.patientId
                             )}
-                            target="_blank"
+                            target="_self"
                         >
                             {data.patientId}
                         </a>

@@ -79,7 +79,7 @@ export default class OncoKbCard extends React.Component<OncoKbCardProps> {
                         {this.oncokbLinkOut === undefined ? (
                             { oncokbLogo }
                         ) : (
-                            <a href={`${this.oncokbLinkOut}`} target="_blank">
+                            <a href={`${this.oncokbLinkOut}`} target="_self">
                                 {oncokbLogo}
                             </a>
                         )}

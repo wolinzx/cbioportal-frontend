@@ -41,7 +41,7 @@ export default class StudyColumnFormatter {
             return <span />;
         } else {
             return (
-                <a href={getStudySummaryUrl(study.studyId)} target="_blank">
+                <a href={getStudySummaryUrl(study.studyId)} target="_self">
                     <TruncatedText
                         text={study.name}
                         tooltip={

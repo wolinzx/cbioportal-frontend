@@ -281,7 +281,7 @@ export default class GroupComparisonPage extends React.Component<
                                         .map(study => study.studyId)
                                         .join(','),
                                 })}
-                                target="_blank"
+                                target="_self"
                             >
                                 Multiple studies
                             </a>

@@ -17,7 +17,7 @@ export function WrappedTour() {
                                 <h3>Group Comparison is here!</h3>
                                 <a
                                     href={'/tutorials#group-comparison'}
-                                    target={'_blank'}
+                                    target={'_self'}
                                 >
                                     Click here
                                 </a>{' '}

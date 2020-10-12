@@ -10,7 +10,7 @@ export default class ArticleAbstractItem extends React.Component<
         let content = <b>{this.props.abstract}</b>;
         if (this.props.link) {
             content = (
-                <a href={this.props.link} target="_blank">
+                <a href={this.props.link} target="_self">
                     {content}
                 </a>
             );

@@ -35,7 +35,7 @@ export function myCancerGenomeLinks(linksHTML: string[]) {
         if (myCancerGenomeLink) {
             links.push(
                 <li key={index}>
-                    <a href={myCancerGenomeLink.url} target="_blank">
+                    <a href={myCancerGenomeLink.url} target="_self">
                         {myCancerGenomeLink.text}
                     </a>
                 </li>

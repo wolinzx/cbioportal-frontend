@@ -142,10 +142,7 @@ export const MUTATION_COLUMN_HEADERS = {
             }
             overlay={
                 <span>
-                    <a
-                        href="https://gnomad.broadinstitute.org/"
-                        target="_blank"
-                    >
+                    <a href="https://gnomad.broadinstitute.org/" target="_self">
                         gnomAD
                     </a>{' '}
                     population allele frequencies. Overall population allele
@@ -167,7 +164,7 @@ export const MUTATION_COLUMN_HEADERS = {
                 <span>
                     <a
                         href="https://www.ncbi.nlm.nih.gov/clinvar/"
-                        target="_blank"
+                        target="_self"
                     >
                         ClinVar
                     </a>{' '}
@@ -188,7 +185,7 @@ export const MUTATION_COLUMN_HEADERS = {
             overlay={
                 <span>
                     The Single Nucleotide Polymorphism Database (
-                    <a href="https://www.ncbi.nlm.nih.gov/snp/" target="_blank">
+                    <a href="https://www.ncbi.nlm.nih.gov/snp/" target="_self">
                         dbSNP
                     </a>
                     ) is a free public archive for genetic variation within and

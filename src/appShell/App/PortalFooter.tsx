@@ -102,7 +102,7 @@ export default class PortalFooter extends React.Component<
                                     </If>
                                     <li>
                                         <a
-                                            target="_blank"
+                                            target="_self"
                                             href="https://groups.google.com/forum/#!forum/cbioportal"
                                         >
                                             User Group
@@ -162,7 +162,7 @@ export default class PortalFooter extends React.Component<
                                     >
                                         <li>
                                             <a
-                                                target="_blank"
+                                                target="_self"
                                                 href="https://www.twitter.com/cbioportal"
                                             >
                                                 Twitter
@@ -186,7 +186,7 @@ export default class PortalFooter extends React.Component<
                                     </li>
                                     <li>
                                         <a
-                                            target="_blank"
+                                            target="_self"
                                             href="https://github.com/cBioPortal/"
                                         >
                                             GitHub
@@ -194,7 +194,7 @@ export default class PortalFooter extends React.Component<
                                     </li>
                                     <li>
                                         <a
-                                            target="_blank"
+                                            target="_self"
                                             href="https://slack.cbioportal.org"
                                         >
                                             Slack

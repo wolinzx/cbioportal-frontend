@@ -3427,7 +3427,7 @@ export default class PlotsTab extends React.Component<IPlotsTabProps, {}> {
                                                         {genericAssayUrl &&
                                                             axisSelection.selectedGenericAssayOption && (
                                                                 <a
-                                                                    target="_blank"
+                                                                    target="_self"
                                                                     href={
                                                                         genericAssayUrl
                                                                     }

@@ -225,7 +225,7 @@ export class CancerSummaryChart extends React.Component<
                                         href={this.formatStudyLink(
                                             tooltipModel.studyId
                                         )}
-                                        target="_blank"
+                                        target="_self"
                                     >
                                         {tooltipModel.groupName}
                                         &nbsp;

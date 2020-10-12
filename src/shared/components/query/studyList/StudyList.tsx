@@ -340,7 +340,7 @@ export default class StudyList extends QueryStoreComponent<
                             };
                             if (typeof link.onClick === 'string') {
                                 anchorProps.href = link.onClick;
-                                anchorProps.target = '_blank';
+                                anchorProps.target = '_self';
                             } else {
                                 anchorProps.onClick = link.onClick;
                             }

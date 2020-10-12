@@ -45,7 +45,7 @@ const publicInstanceDisclaimerOverLay = (
             This instance of cBioPortal does not currently have a license for
             full OncoKB content and is therefore missing therapeutic
             implications. To obtain a license, please follow{' '}
-            <a href={ONCOKB_DATA_ACCESS_PAGE_LINK} target={'_blank'}>
+            <a href={ONCOKB_DATA_ACCESS_PAGE_LINK} target={'_self'}>
                 these instructions
             </a>
             .
@@ -271,7 +271,7 @@ export default class OncoKbCardTreatmentContent extends React.Component<
         content.push(parts[0]);
 
         const comp = (
-            <a href={link.link} target={link.target || '_blank'}>
+            <a href={link.link} target={link.target || '_self'}>
                 {link.keyword}
             </a>
         );

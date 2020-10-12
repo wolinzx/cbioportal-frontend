@@ -1147,7 +1147,7 @@ export class StudyViewPageStore {
                 clinicalAttributeName: chartMeta.displayName,
                 origin: this.studyIds.join(','),
             }),
-            '_blank'
+            '_self'
         );
 
         // wait until the new window has routingStore available, or its closed
@@ -6544,7 +6544,7 @@ export class StudyViewPageStore {
                 .join('\n');
             url = '/results';
         }
-        submitToPage(url, formOps, '_blank');
+        submitToPage(url, formOps, '_self');
     }
 
     @autobind

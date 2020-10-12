@@ -55,7 +55,7 @@ export class StudySummaryRecord extends React.Component<CancerStudy, {}> {
                             {this.props.name}
                         </span>
                         <a
-                            target="_blank"
+                            target="_self"
                             href={getStudySummaryUrl(this.props.studyId)}
                         >
                             <i
@@ -366,7 +366,7 @@ export default class VirtualStudy extends React.Component<
                                 <div className={classnames(styles.result)}>
                                     <div className={styles.name}>
                                         <a
-                                            target="_blank"
+                                            target="_self"
                                             href={`${this.virtualStudyUrl}`}
                                             style={{ width: '220px' }}
                                         >
@@ -410,7 +410,7 @@ export default class VirtualStudy extends React.Component<
                                             onClick={event =>
                                                 window.open(
                                                     this.virtualStudyUrl,
-                                                    '_blank'
+                                                    '_self'
                                                 )
                                             }
                                         >
@@ -433,7 +433,7 @@ export default class VirtualStudy extends React.Component<
                                                                         .id,
                                                                 }
                                                             ),
-                                                            '_blank'
+                                                            '_self'
                                                         );
                                                     }
                                                 }}

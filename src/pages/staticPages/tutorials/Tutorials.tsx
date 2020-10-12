@@ -53,7 +53,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                 {/*    </strong>*/}
                 {/*    , register{' '}*/}
                 {/*    <a*/}
-                {/*        target="_blank"*/}
+                {/*        target="_self"*/}
                 {/*        href="https://dfci.zoom.us/webinar/register/7315875611981/WN_An_3l0XYQHCoinWvclUrlw"*/}
                 {/*    >*/}
                 {/*        here*/}
@@ -135,7 +135,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                                 <li>
                                     Cerami et al. Cancer Discovery 2012{' '}
                                     <a
-                                        target="_blank"
+                                        target="_self"
                                         href="http://cancerdiscovery.aacrjournals.org/content/2/5/401.abstract"
                                     >
                                         PubMed
@@ -144,7 +144,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                                 <li>
                                     Gao et al. Science Signaling 2013{' '}
                                     <a
-                                        target={'_blank'}
+                                        target={'_self'}
                                         href={getNCBIlink('/pubmed/23550210')}
                                     >
                                         PubMed
@@ -171,7 +171,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}>Watch on </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.youtube.com/watch?v=fPIAxH--cSo"
                         >
                             YouTube.com
@@ -180,7 +180,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}> or </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.bilibili.com/video/BV1tf4y1m7Lp"
                         >
                             bilibili.com
@@ -219,7 +219,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}>Watch on </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.youtube.com/watch?v=uJsp9kd2jIk"
                         >
                             YouTube.com
@@ -228,7 +228,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}> or </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.bilibili.com/video/BV1Qf4y1m7Lx"
                         >
                             bilibili.com
@@ -267,7 +267,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}>Watch on </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.youtube.com/watch?v=YUxVv6pkxD4"
                         >
                             YouTube.com
@@ -276,7 +276,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}> or </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.bilibili.com/video/BV1HK4y1t7dE"
                         >
                             bilibili.com
@@ -315,7 +315,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}>Watch on </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.youtube.com/watch?v=Tx4HZCrIe5c"
                         >
                             YouTube.com
@@ -324,7 +324,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}> or </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.bilibili.com/video/BV1VZ4y1W76p"
                         >
                             bilibili.com
@@ -364,7 +364,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}>Watch on </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.youtube.com/watch?v=Nq12o2i0yaw"
                         >
                             YouTube.com
@@ -373,7 +373,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ fontSize: 'large' }}> or </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://www.bilibili.com/video/BV1jz4y197iU"
                         >
                             bilibili.com
@@ -397,7 +397,7 @@ export default class Tutorials extends React.Component<{}, {}> {
                     <span style={{ color: '#eee' }}> | </span>
                     <h4 style={{ display: 'inline' }}>
                         <a
-                            target="_blank"
+                            target="_self"
                             href="https://github.com/cBioPortal/2020-cbioportal-r-workshop"
                         >
                             Workshop code

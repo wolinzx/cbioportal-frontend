@@ -106,7 +106,7 @@ export default class GeneSetSelector extends QueryStoreComponent<{}, {}> {
                     className="sectionLabel"
                     secondaryComponent={
                         <a
-                            target="_blank"
+                            target="_self"
                             className={styles.learnOql}
                             href={getOncoQueryDocUrl()}
                         >

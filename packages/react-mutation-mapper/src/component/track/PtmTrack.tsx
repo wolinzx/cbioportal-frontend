@@ -69,7 +69,7 @@ export function ptmInfoTooltip(transcriptId?: string) {
             </p>
             <div>
                 Data Source:{' '}
-                <a href="http://dbptm.mbc.nctu.edu.tw/" target="_blank">
+                <a href="http://dbptm.mbc.nctu.edu.tw/" target="_self">
                     dbPTM
                 </a>
             </div>

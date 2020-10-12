@@ -41,7 +41,7 @@ export default class DbsnpId extends React.Component<ClinVarIdProps, {}> {
                     }
                 >
                     <span style={{ textAlign: 'right', float: 'right' }}>
-                        <a href={dbsnpLink} target="_blank">
+                        <a href={dbsnpLink} target="_self">
                             {rsId}
                         </a>
                     </span>

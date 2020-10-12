@@ -40,7 +40,7 @@ export default class RefComponent extends React.Component<{
         if (prefix) {
             link = (
                 <a
-                    target="_blank"
+                    target="_self"
                     href={getNCBIlink(`/pubmed/${ids.join(',')}`)}
                 >
                     {`${prefix}${ids.join(',')}`}

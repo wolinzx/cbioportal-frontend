@@ -204,7 +204,7 @@ export default class OncoprinterTool extends React.Component<
     }
 
     private openDataFormat(tab: 'genomic' | 'clinical' | 'heatmap') {
-        window.open(`oncoprinterDataFormat?tab=${tab}`, '_blank');
+        window.open(`oncoprinterDataFormat?tab=${tab}`, '_self');
     }
 
     @autobind

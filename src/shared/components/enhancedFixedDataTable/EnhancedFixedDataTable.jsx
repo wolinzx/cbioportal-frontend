@@ -134,7 +134,7 @@ var EnhancedFixedDataTable = (function() {
                     shortLabel = React.createElement(
                         'a',
                         {
-                            target: '_blank',
+                            target: '_self',
                             href: cbio.util.getLinkToSampleView(
                                 cancerStudyId,
                                 label
@@ -146,7 +146,7 @@ var EnhancedFixedDataTable = (function() {
                     shortLabel = React.createElement(
                         'a',
                         {
-                            target: '_blank',
+                            target: '_self',
                             href: cbio.util.getLinkToPatientView(
                                 cancerStudyId,
                                 label

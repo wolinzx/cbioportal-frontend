@@ -43,13 +43,13 @@ function sampleViewAnchorTag(study_id: string, sample_id: string) {
     return `<a class="nobreak" href="${getSampleViewUrl(
         study_id,
         sample_id
-    )}" target="_blank">${sample_id}</a>`;
+    )}" target="_self">${sample_id}</a>`;
 }
 function patientViewAnchorTag(study_id: string, patient_id: string) {
     return `<a class="nobreak" href="${getPatientViewUrl(
         study_id,
         patient_id
-    )}" target="_blank">${patient_id}</a>`;
+    )}" target="_self">${patient_id}</a>`;
 }
 
 function makeGenePanelPopupLink(
@@ -74,7 +74,7 @@ function makeGenePanelPopupLink(
                             return g.hugoGeneSymbol;
                         })
                         .sort();
-                    const popup = open('', '_blank', 'width=500,height=500');
+                    const popup = open('', '_self', 'width=500,height=500');
                     if (popup) {
                         const div = popup.document.createElement('div');
                         popup.document.body.appendChild(div);
@@ -416,7 +416,7 @@ export function getCaseViewElt(
                           studyId: d.study_id,
                           patientId: d.patient,
                       }))
-                  )} target="_blank">View these ${
+                  )} target="_self">View these ${
                       dataUnderMouse.length
                   } samples<a/>`
                 : `<span class="nobreak">${dataUnderMouse.length} samples</span>`;
@@ -438,7 +438,7 @@ export function getCaseViewElt(
                           studyId: d.study_id,
                           patientId: d.patient!,
                       }))
-                  )} target="_blank">View these ${
+                  )} target="_self">View these ${
                       dataUnderMouse.length
                   } patients<a/>`
                 : `<span class="nobreak">${dataUnderMouse.length} patients</span>`;

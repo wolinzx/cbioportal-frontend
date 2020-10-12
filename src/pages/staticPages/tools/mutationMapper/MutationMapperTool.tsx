@@ -98,7 +98,7 @@ export default class MutationMapperTool extends React.Component<
                                 Annotating mutations with{' '}
                                 <a
                                     href={'https://www.genomenexus.org'}
-                                    target="_blank"
+                                    target="_self"
                                 >
                                     Genome Nexus
                                 </a>

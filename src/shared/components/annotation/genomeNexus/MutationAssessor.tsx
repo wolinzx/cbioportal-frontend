@@ -130,7 +130,7 @@ export default class MutationAssessor extends React.Component<
 
             const xVar = xVarLink ? (
                 <div className={tooltipStyles['mutation-assessor-link']}>
-                    <a href={xVarLink} target="_blank">
+                    <a href={xVarLink} target="_self">
                         <img
                             height="15"
                             width="19"
@@ -147,7 +147,7 @@ export default class MutationAssessor extends React.Component<
 
             const msa = msaLink ? (
                 <div className={tooltipStyles['mutation-assessor-link']}>
-                    <a href={msaLink} target="_blank">
+                    <a href={msaLink} target="_self">
                         <span
                             className={`${tooltipStyles['ma-icon']} ${tooltipStyles['ma-msa-icon']}`}
                         >
@@ -160,7 +160,7 @@ export default class MutationAssessor extends React.Component<
 
             const pdb = pdbLink ? (
                 <div className={tooltipStyles['mutation-assessor-link']}>
-                    <a href={pdbLink} target="_blank">
+                    <a href={pdbLink} target="_self">
                         <span
                             className={`${tooltipStyles['ma-icon']} ${tooltipStyles['ma-3d-icon']}`}
                         >

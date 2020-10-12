@@ -112,7 +112,7 @@ export function submitToStudyViewPage(
         buildCBioPortalPageUrl(`study`, {
             id: queriedStudies.map(study => study.studyId).join(','),
         }),
-        '_blank'
+        '_self'
     );
     if (sampleIdentifiers.length > 0) {
         (studyPage as any).studyPageFilter = `filterJson=${JSON.stringify({

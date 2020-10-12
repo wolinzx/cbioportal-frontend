@@ -789,7 +789,7 @@ export default class ResultsViewOncoprint extends React.Component<
                 this.addHeatmapTracks(this.selectedHeatmapProfileId, entityIds);
             },
             onClickNGCHM: () => {
-                window.open(this.props.store.remoteNgchmUrl.result, '_blank');
+                window.open(this.props.store.remoteNgchmUrl.result, '_self');
             },
             onClickDownload: (type: string) => {
                 switch (type) {

@@ -19,7 +19,7 @@ export default class PmidItem extends React.Component<PmidItemProps> {
                 <a
                     className={styles['list-group-item-title']}
                     href={getNCBIlink(`/pubmed/${this.props.pmid}`)}
-                    target="_blank"
+                    target="_self"
                 >
                     <b>{trimOffHtmlTagEntities(this.props.title)}</b>
                 </a>

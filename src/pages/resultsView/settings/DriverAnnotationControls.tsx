@@ -234,7 +234,7 @@ export default class DriverAnnotationControls extends React.Component<
                                                     href={getNCBIlink(
                                                         '/pubmed/26619011'
                                                     )}
-                                                    target="_blank"
+                                                    target="_self"
                                                 >
                                                     Chang et al., Nat
                                                     Biotechnol, 2016.
@@ -242,7 +242,7 @@ export default class DriverAnnotationControls extends React.Component<
                                                 Explore all mutations at{' '}
                                                 <a
                                                     href="https://www.cancerhotspots.org"
-                                                    target="_blank"
+                                                    target="_self"
                                                 >
                                                     https://cancerhotspots.org
                                                 </a>

@@ -368,7 +368,7 @@ export default class ComparisonGroupManager extends React.Component<
                                 getComparisonLoadingUrl({
                                     phase: LoadingPhase.CREATING_SESSION,
                                 }),
-                                '_blank'
+                                '_self'
                             );
 
                             // wait until the new window has routingStore available

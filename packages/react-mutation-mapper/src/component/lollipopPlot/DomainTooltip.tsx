@@ -45,7 +45,7 @@ export default class DomainTooltip extends React.Component<
                     <a
                         style={{ marginRight: '5px' }}
                         href={`http://pfam.xfam.org/family/${pfamAccession}`}
-                        target="_blank"
+                        target="_self"
                     >
                         PFAM
                     </a>
@@ -63,7 +63,7 @@ export default class DomainTooltip extends React.Component<
         return this.mutationAlignerCacheData &&
             this.mutationAlignerCacheData.status === 'complete' &&
             this.mutationAlignerCacheData.data ? (
-            <a href={this.mutationAlignerCacheData.data} target="_blank">
+            <a href={this.mutationAlignerCacheData.data} target="_self">
                 Mutation Aligner
             </a>
         ) : null;

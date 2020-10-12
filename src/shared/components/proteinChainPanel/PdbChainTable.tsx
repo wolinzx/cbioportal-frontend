@@ -32,7 +32,7 @@ export default class PdbChainTable extends React.Component<
                 return (
                     <a
                         href={`http://www.rcsb.org/pdb/explore/explore.do?structureId=${d.pdbId}`}
-                        target="_blank"
+                        target="_self"
                     >
                         {d.pdbId}
                     </a>

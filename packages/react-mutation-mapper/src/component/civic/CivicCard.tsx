@@ -74,7 +74,7 @@ export default class CivicCard extends React.Component<ICivicCardProps, {}> {
                 <div key={key} className="civic-card-variant">
                     <div className="civic-card-variant-header">
                         <span className="civic-card-variant-name">
-                            <a href={url} target="_blank">
+                            <a href={url} target="_self">
                                 {name}
                             </a>
                         </span>
@@ -115,10 +115,7 @@ export default class CivicCard extends React.Component<ICivicCardProps, {}> {
                         <div className="col s12 civic-card-gene">
                             <p>
                                 <span className="civic-card-gene-name">
-                                    <a
-                                        href={this.props.geneUrl}
-                                        target="_blank"
-                                    >
+                                    <a href={this.props.geneUrl} target="_self">
                                         <b>{this.props.geneName}</b>
                                     </a>
                                 </span>{' '}
@@ -142,7 +139,7 @@ export default class CivicCard extends React.Component<ICivicCardProps, {}> {
                 </span>
 
                 <div className="item footer">
-                    <a href={this.props.geneUrl} target="_blank">
+                    <a href={this.props.geneUrl} target="_self">
                         <img
                             src={civicTextLogo}
                             className="civic-logo"

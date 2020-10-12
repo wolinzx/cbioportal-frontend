@@ -583,7 +583,7 @@ export default class PatientViewPage extends React.Component<
                                                     .studyId,
                                                 sample.id
                                             )}
-                                            target="_blank"
+                                            target="_self"
                                             onClick={(
                                                 e: React.MouseEvent<
                                                     HTMLAnchorElement

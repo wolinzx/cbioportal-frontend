@@ -65,7 +65,7 @@ export default class ResourceLink extends React.Component<
                 <a
                     href={this.props.resource.url}
                     style={{ marginLeft: 16, fontSize: 10 }}
-                    target={'_blank'}
+                    target={'_self'}
                 >
                     <i
                         className={`fa fa-external-link fa-sm`}

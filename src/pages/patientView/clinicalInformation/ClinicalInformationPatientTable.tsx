@@ -113,7 +113,7 @@ export default class ClinicalInformationPatientTable extends React.Component<
                         render: data => {
                             if (isUrl(data.value)) {
                                 return (
-                                    <a href={data.value} target="_blank">
+                                    <a href={data.value} target="_self">
                                         {data.value}
                                     </a>
                                 );

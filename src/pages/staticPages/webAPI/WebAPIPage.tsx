@@ -34,7 +34,7 @@ export default class WebAPIPage extends React.Component<{}, {}> {
 
     async downloadDataAccessTokenFile() {
         const tokenUrl = buildCBioPortalAPIUrl('api/data-access-token');
-        window.open(tokenUrl, '_blank');
+        window.open(tokenUrl, '_self');
     }
 
     renderDataAccessTokensDiv() {
@@ -98,7 +98,7 @@ export default class WebAPIPage extends React.Component<{}, {}> {
                 <ul>
                     <li>
                         <strong>q</strong>=[a query following{' '}
-                        <a href="oql" target="_blank">
+                        <a href="oql" target="_self">
                             Onco Query Language
                         </a>
                         , e.g. a space separated list of HUGO gene symbols]

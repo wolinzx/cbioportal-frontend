@@ -88,7 +88,7 @@ export default class GeneSummary extends React.Component<GeneSummaryProps, {}> {
                         {refseqMrnaId ? (
                             <a
                                 href={getNCBIlink(`/nuccore/${refseqMrnaId}`)}
-                                target="_blank"
+                                target="_self"
                             >
                                 {refseqMrnaId}
                             </a>
@@ -106,7 +106,7 @@ export default class GeneSummary extends React.Component<GeneSummaryProps, {}> {
                                       this.props.transcriptSummaryUrlTemplate!,
                                       { transcriptId: activeTranscript }
                                   )}
-                                  target="_blank"
+                                  target="_self"
                               >
                                   {activeTranscript}
                               </a>
@@ -121,7 +121,7 @@ export default class GeneSummary extends React.Component<GeneSummaryProps, {}> {
                                       this.props.transcriptSummaryUrlTemplate!,
                                       { transcriptId: canonicalTranscriptId }
                                   )}
-                                  target="_blank"
+                                  target="_self"
                               >
                                   {canonicalTranscriptId}
                               </a>
@@ -139,7 +139,7 @@ export default class GeneSummary extends React.Component<GeneSummaryProps, {}> {
                                         DATA: ccdsId,
                                     },
                                 })}
-                                target="_blank"
+                                target="_self"
                             >
                                 {ccdsId}
                             </a>
@@ -154,7 +154,7 @@ export default class GeneSummary extends React.Component<GeneSummaryProps, {}> {
                         {uniprotId ? (
                             <a
                                 href={`http://www.uniprot.org/uniprot/${uniprotId}`}
-                                target="_blank"
+                                target="_self"
                             >
                                 {uniprotId}
                             </a>

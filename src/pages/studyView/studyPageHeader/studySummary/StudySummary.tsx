@@ -51,7 +51,7 @@ export default class StudySummary extends React.Component<
             if (this.props.studies[0].pmid) {
                 elems.push(
                     <a
-                        target="_blank"
+                        target="_self"
                         href={getNCBIlink(
                             `/pubmed/${this.props.studies[0].pmid}`
                         )}
@@ -99,7 +99,7 @@ export default class StudySummary extends React.Component<
                     <li>
                         <a
                             href={getStudySummaryUrl(study.studyId)}
-                            target="_blank"
+                            target="_self"
                         >
                             {study.name}
                         </a>

@@ -364,7 +364,7 @@ export default class ResultsViewPage extends React.Component<
                                 functionality, please visit{' '}
                                 <a
                                     href="http://www.pathwaycommons.org/pcviz/"
-                                    target="_blank"
+                                    target="_self"
                                 >
                                     http://www.pathwaycommons.org/pcviz/
                                 </a>

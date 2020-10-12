@@ -35,7 +35,7 @@ export default class HgvsgColumnFormatter {
                             Click to see this variant on &nbsp;
                             <a
                                 href={genomeNexusUrl}
-                                target="_blank"
+                                target="_self"
                                 rel="noopener noreferrer"
                             >
                                 Genome Nexus
@@ -49,7 +49,7 @@ export default class HgvsgColumnFormatter {
                     <span className={hgvsgStyles['hgvsg-data']}>
                         <a
                             href={genomeNexusUrl}
-                            target="_blank"
+                            target="_self"
                             rel="noopener noreferrer"
                         >
                             {hgvsg}&nbsp;

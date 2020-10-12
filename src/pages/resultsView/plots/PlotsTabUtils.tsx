@@ -2122,7 +2122,7 @@ function sampleIdForTooltip<D extends IPlotSampleData>(
         <>
             <a
                 href={getSampleViewUrl(d.studyId, d.sampleId)}
-                target="_blank"
+                target="_self"
                 style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}
             >
                 {d.sampleId}
@@ -2132,7 +2132,7 @@ function sampleIdForTooltip<D extends IPlotSampleData>(
                 <br />,
                 <a
                     href={getStudySummaryUrl(d.studyId)}
-                    target="_blank"
+                    target="_self"
                     style={{ whiteSpace: 'pre-line', wordBreak: 'break-word' }}
                 >
                     {studyIdToStudy[d.studyId].name}
