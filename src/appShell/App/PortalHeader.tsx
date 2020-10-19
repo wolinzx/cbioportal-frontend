@@ -11,6 +11,7 @@ import {
     getInstituteLogoUrl,
 } from '../../shared/api/urls';
 import SocialAuthButton from '../../shared/components/SocialAuthButton';
+import ChangeLanguage from '../../shared/components/ChangeLanguage';
 import { Dropdown } from 'react-bootstrap';
 import { DataAccessTokensDropdown } from '../../shared/components/dataAccessTokens/DataAccessTokensDropdown';
 import { observable } from 'mobx';
@@ -128,6 +129,7 @@ export default class PortalHeader extends React.Component<
                     </nav>
                 </div>
                 <div id="rightHeaderContent">
+                    <ChangeLanguage />
                     <If condition={!AppConfig.hide_login}>
                         <If condition={this.props.appStore.isLoggedIn}>
                             <Then>

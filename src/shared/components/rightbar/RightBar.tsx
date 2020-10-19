@@ -10,6 +10,7 @@ import { Link } from 'react-router';
 import LoadingIndicator from '../loadingIndicator/LoadingIndicator';
 import { redirectToStudyView } from '../../api/urls';
 import { ResultsViewTab } from '../../../pages/resultsView/ResultsViewPageHelpers';
+import i18next from 'i18next';
 
 interface IRightBarProps {
     queryStore: QueryStore;
@@ -80,7 +81,7 @@ export default class RightBar extends React.Component<
             ) {
                 return (
                     <div className="rightBarSection">
-                        <h3>What's New</h3>
+                        <h3>{i18next.t('Page.whatsNew')}</h3>
                         <div
                             dangerouslySetInnerHTML={{
                                 __html: AppConfig.serverConfig
@@ -178,7 +179,7 @@ export default class RightBar extends React.Component<
             } else {
                 return (
                     <div className="rightBarSection exampleQueries">
-                        <h3>Example Queries</h3>
+                        <h3>{i18next.t('Page.exampleQueries')}</h3>
                         <ul>
                             <li>
                                 <Link to="/comparison/mutations?sessionId=5cf89323e4b0ab413787436c">
@@ -246,7 +247,7 @@ export default class RightBar extends React.Component<
     public getTestimonialsSection() {
         return AppConfig.serverConfig.skin_right_nav_show_testimonials ? (
             <div className="rightBarSection" style={{ minHeight: '300px' }}>
-                <h3>Testimonials</h3>
+                <h3>{i18next.t('Page.testimonials')}</h3>
                 <Testimonials />
             </div>
         ) : null;
@@ -255,7 +256,7 @@ export default class RightBar extends React.Component<
     public getDataSetsSection() {
         return AppConfig.serverConfig.skin_right_nav_show_data_sets ? (
             <div className="rightBarSection">
-                <h3>Cancer Studies</h3>
+                <h3>{i18next.t('Page.cancerStudies')}</h3>
                 {this.studyStore.cancerStudies.isComplete &&
                     this.studyStore.cancerTypes.isComplete && (
                         <div>

@@ -1,0 +1,12 @@
+{
+  "whatsNew": "最新消息",
+  "query": "查询",
+  "download": "下载",
+  "selectStuiesTip": "为可视化和分析选择研究:",
+  "cancerStudies": "癌症研究",
+  "exampleQueries": "根据示例查询",
+  "testimonials": "评价",
+  "queryByGene": "按基因查询",
+  "or": "或",
+  "exploreSelectedStudies": "查看选定的研究"
+}

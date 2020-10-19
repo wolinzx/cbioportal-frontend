@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './i18n';
 import { Provider } from 'mobx-react';
 import { Router, useRouterHistory } from 'react-router';
 import { createHistory } from 'history';

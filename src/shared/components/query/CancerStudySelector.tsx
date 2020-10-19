@@ -23,6 +23,7 @@ import { StudySelectorStats } from 'shared/components/query/StudySelectorStats';
 import WindowStore from 'shared/components/window/WindowStore';
 import Timeout = NodeJS.Timeout;
 import LoadingIndicator from '../loadingIndicator/LoadingIndicator';
+import i18next from 'i18next';
 
 const MIN_LIST_HEIGHT = 200;
 
@@ -208,7 +209,7 @@ export default class CancerStudySelector extends React.Component<
                             this.store.cancerStudies,
                         ]}
                     >
-                        Select Studies for Visualization & Analysis:
+                        {i18next.t('Page.selectStuiesTip')}
                     </SectionHeader>
 
                     {this.store.selectableStudiesSet.isComplete && (

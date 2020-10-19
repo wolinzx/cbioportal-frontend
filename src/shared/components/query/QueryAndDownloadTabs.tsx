@@ -12,6 +12,7 @@ import { trackEvent } from 'shared/lib/tracking';
 import { If } from 'react-if';
 import AppConfig from 'appConfig';
 import { ModifyQueryParams } from 'pages/resultsView/ResultsViewPageStore';
+import i18next from 'i18next';
 
 const DOWNLOAD = 'download';
 const ADVANCED = 'advanced';
@@ -109,7 +110,7 @@ export default class QueryAndDownloadTabs extends React.Component<
                 >
                     <MSKTab
                         id={'advanced'}
-                        linkText={'Query'}
+                        linkText={i18next.t('Page.query')}
                         onTabDidMount={() => this.setDefaultTab(undefined)}
                     >
                         <QueryContainer
@@ -144,7 +145,7 @@ export default class QueryAndDownloadTabs extends React.Component<
                     </MSKTab>
                     <MSKTab
                         id={DOWNLOAD}
-                        linkText={'Download'}
+                        linkText={i18next.t('Page.download')}
                         hide={!this.props.showDownloadTab}
                         onTabDidMount={() => this.setDefaultTab(undefined)}
                     >

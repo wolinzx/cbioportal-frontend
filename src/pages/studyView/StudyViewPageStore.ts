@@ -4475,7 +4475,10 @@ export class StudyViewPageStore {
                 STUDY_VIEW_CONFIG.layout.dimensions[ChartTypeEnum.SURVIVAL]
             );
             // check priority for survival plots, hide the plot if priority is 0
-            if (this.chartMetaSet[key].priority !== 0) {
+            if (
+                this.chartMetaSet[key] &&
+                this.chartMetaSet[key].priority !== 0
+            ) {
                 this.changeChartVisibility(key, true);
             }
         });

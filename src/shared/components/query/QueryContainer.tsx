@@ -24,6 +24,7 @@ import { StudySelectorStats } from 'shared/components/query/StudySelectorStats';
 import $ from 'jquery';
 import { serializeEvent } from 'shared/lib/tracking';
 import { ModifyQueryParams } from 'pages/resultsView/ResultsViewPageStore';
+import i18next from 'i18next';
 
 interface QueryContainerProps {
     store: QueryStore;
@@ -374,10 +375,10 @@ export default class QueryContainer extends React.Component<
                                                 }
                                             )}
                                         >
-                                            Query By Gene
+                                            {i18next.t('Page.queryByGene')}
                                         </a>
                                     </DefaultTooltip>
-                                    OR
+                                    {i18next.t('Page.or')}
                                     <DefaultTooltip
                                         placement={'top'}
                                         trigger={['hover']}
@@ -416,7 +417,9 @@ export default class QueryContainer extends React.Component<
                                                 style={{ marginTop: 5 }}
                                                 className="ci ci-pie-chart"
                                             ></i>{' '}
-                                            Explore Selected Studies
+                                            {i18next.t(
+                                                'Page.exploreSelectedStudies'
+                                            )}
                                         </a>
                                     </DefaultTooltip>
                                 </FlexRow>
