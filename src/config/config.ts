@@ -10,6 +10,7 @@ import memoize from 'memoize-weak-decorator';
 import {
     getCbioPortalApiUrl,
     getConfigurationServiceApiUrl,
+    getSetCookieApiUrl,
     getG2SApiUrl,
     getGenomeNexusApiUrl,
     getOncoKbApiUrl,
@@ -35,6 +36,7 @@ import { CivicAPI } from 'cbioportal-utils';
 import AppConfig from 'appConfig';
 import { sendSentryMessage } from '../shared/lib/tracking';
 import { log } from '../shared/lib/consoleLog';
+import axios from 'axios';
 
 const config: any = (window as any).frontendConfig || { serverConfig: {} };
 
@@ -248,6 +250,30 @@ export function fetchServerConfig() {
         url: getConfigurationServiceApiUrl(),
         dataType: 'jsonp',
         jsonpCallback: 'callback',
+    });
+}
+
+export function setServerCookie(cookie: any) {
+    return new Promise(resolve => {
+        // $.ajax({
+        //     type: 'GET',
+        //     url: getSetCookieApiUrl(),
+        //     // crossDomain: true,
+        //     success: function(test) {
+        //         console.log(test, 'test');
+        //         resolve(test)
+        //     }
+        // });
+        console.log('axios cookie', cookie);
+
+        axios
+            .get(getSetCookieApiUrl() + cookie.data.csrf_access_token)
+            .then(res => {
+                resolve(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     });
 }
 

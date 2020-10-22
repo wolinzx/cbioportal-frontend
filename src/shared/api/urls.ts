@@ -304,6 +304,10 @@ export function getConfigurationServiceApiUrl() {
     );
 }
 
+export function getSetCookieApiUrl() {
+    return buildCBioPortalAPIUrl('api/set-cookie/');
+}
+
 export function getG2SApiUrl() {
     return AppConfig.serverConfig.g2s_url;
 }

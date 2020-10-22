@@ -7,6 +7,7 @@ import { syncHistoryWithStore } from 'mobx-react-router';
 import ExtendedRoutingStore from './shared/lib/ExtendedRouterStore';
 import {
     fetchServerConfig,
+    setServerCookie,
     initializeAPIClients,
     initializeAppStore,
     initializeConfiguration,
@@ -165,25 +166,43 @@ if (__DEBUG__ && module.hot) {
     module.hot.accept('./routes', () => render());
 }
 
-$(document).ready(async () => {
-    // we show blank page if the window.name is "blank"
-    if (window.name === 'blank') {
-        return;
+$(document).ready(() => {
+    let cookie;
+    async function receiveMessageFromIframePage(event) {
+        console.log('in');
+        const data = event.data;
+        console.log(data, 'data');
+        if (data && data.command === 'cookie') {
+            cookie = event.data;
+            // need set cookie first
+            await setServerCookie(cookie);
+
+            // $.
+
+            // we show blank page if the window.name is "blank"
+            if (window.name === 'blank') {
+                return;
+            }
+
+            // we use rawServerConfig (written by JSP) if it is present
+            // or fetch from config service if not
+            // need to use jsonp, so use jquery
+            let config = window.rawServerConfig || (await fetchServerConfig());
+
+            setServerConfig(config);
+
+            setConfigDefaults();
+
+            initializeAPIClients();
+
+            initializeAppStore(stores.appStore, config);
+
+            render();
+
+            stores.appStore.setAppReady();
+        }
     }
-    // we use rawServerConfig (written by JSP) if it is present
-    // or fetch from config service if not
-    // need to use jsonp, so use jquery
-    let config = window.rawServerConfig || (await fetchServerConfig());
 
-    setServerConfig(config);
-
-    setConfigDefaults();
-
-    initializeAPIClients();
-
-    initializeAppStore(stores.appStore, config);
-
-    render();
-
-    stores.appStore.setAppReady();
+    // 监听message事件
+    window.addEventListener('message', receiveMessageFromIframePage, false);
 });

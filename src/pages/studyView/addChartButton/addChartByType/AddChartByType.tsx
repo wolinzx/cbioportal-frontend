@@ -210,6 +210,8 @@ export default class AddChartByType extends React.Component<
     }
 
     render() {
+        debugger;
+
         return (
             <div
                 style={{ display: 'flex', flexDirection: 'column' }}
